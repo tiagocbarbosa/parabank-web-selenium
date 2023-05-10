@@ -32,7 +32,7 @@ public class RegisterPage extends PageObject {
         this.browser.findElement(By.xpath("//input[contains(@value,'Register')]")).click();
     }
 
-    public boolean isAccountRegistered() {
+    public boolean isRegisteredTitleDisplayed() {
         return this.browser.findElement(By.xpath("//h1[@class='title'][contains(.,'Welcome " + RegisterPage.username + "')]")).isDisplayed();
     }
 

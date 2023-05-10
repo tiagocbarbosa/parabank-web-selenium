@@ -30,14 +30,14 @@ public class RegisterTest {
         String zipCode = "40000000";
         String phoneNumber = "123456789";
         String ssn = "123456";
-        String todayDateAndTime = LocalDateTime.now().format(DateTimeFormatter.ofPattern("ddMMyyHHmmss"));
-        String username = "fulano" + todayDateAndTime;
+        String currentDateAndTime = LocalDateTime.now().format(DateTimeFormatter.ofPattern("ddMMyyHHmmss"));
+        String username = "fulano" + currentDateAndTime;
         String password = "123";
         this.registerPage.fillTheRegisterForm(firstName, lastName, street, city, state, zipCode, phoneNumber, ssn,
                 username, password);
         this.registerPage.registerAccount();
 
-        Assertions.assertTrue(this.registerPage.isAccountRegistered());
+        Assertions.assertTrue(this.registerPage.isRegisteredTitleDisplayed());
         Assertions.assertTrue(this.registerPage.isRegisteredMessageDisplayed());
         Assertions.assertTrue(this.registerPage.isLogOutButtonDisplayed());
     }
