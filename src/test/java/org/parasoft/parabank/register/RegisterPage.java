@@ -2,7 +2,6 @@ package org.parasoft.parabank.register;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.parasoft.parabank.PageObject;
 
 public class RegisterPage extends PageObject {
