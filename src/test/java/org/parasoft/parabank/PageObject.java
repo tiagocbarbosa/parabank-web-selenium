@@ -18,6 +18,6 @@ public class PageObject {
     }
 
     public void close() {
-        this.browser.close();
+        this.browser.quit();
     }
 }

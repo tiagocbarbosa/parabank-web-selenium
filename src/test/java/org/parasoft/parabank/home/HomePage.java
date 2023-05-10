@@ -13,7 +13,7 @@ public class HomePage extends PageObject {
         browser.navigate().to(URL_HOME);
     }
 
-    public RegisterPage registerNewCustomer() {
+    public RegisterPage navigateToRegisterPage() {
         browser.findElement(By.xpath("//a[contains(.,'Register')]")).click();
         return new RegisterPage(browser);
     }
