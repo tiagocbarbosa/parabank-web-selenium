@@ -6,6 +6,7 @@ import org.parasoft.parabank.PageObject;
 
 public class RegisterPage extends PageObject {
 
+    public static final String URL_REGISTER = "https://parabank.parasoft.com/parabank/register.htm";
     private static String username;
 
     public RegisterPage(WebDriver browser) {
@@ -45,5 +46,22 @@ public class RegisterPage extends PageObject {
 
     public boolean isLogOutButtonDisplayed() {
         return this.browser.findElement(By.xpath("//a[contains(.,'Log Out')]")).isDisplayed();
+    }
+
+    public boolean isDisplayingErrorMessages() {
+        return this.browser.findElement(By.id("customer.firstName.errors")).isDisplayed()
+                && this.browser.findElement(By.id("customer.lastName.errors")).isDisplayed()
+                && this.browser.findElement(By.id("customer.address.street.errors")).isDisplayed()
+                && this.browser.findElement(By.id("customer.address.city.errors")).isDisplayed()
+                && this.browser.findElement(By.id("customer.address.state.errors")).isDisplayed()
+                && this.browser.findElement(By.id("customer.address.zipCode.errors")).isDisplayed()
+                && this.browser.findElement(By.id("customer.ssn.errors")).isDisplayed()
+                && this.browser.findElement(By.id("customer.username.errors")).isDisplayed()
+                && this.browser.findElement(By.id("customer.password.errors")).isDisplayed()
+                && this.browser.findElement(By.id("repeatedPassword.errors")).isDisplayed();
+    }
+
+    public boolean isCurrentPage() {
+        return this.browser.getCurrentUrl().equals(URL_REGISTER);
     }
 }

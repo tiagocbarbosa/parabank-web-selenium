@@ -37,8 +37,22 @@ public class RegisterTest {
                 username, password);
         this.registerPage.registerAccount();
 
+        Assertions.assertTrue(this.registerPage.isCurrentPage());
         Assertions.assertTrue(this.registerPage.isRegisteredTitleDisplayed());
         Assertions.assertTrue(this.registerPage.isRegisteredMessageDisplayed());
         Assertions.assertTrue(this.registerPage.isLogOutButtonDisplayed());
+    }
+
+    @Test
+    public void shouldDisplayErrors() {
+        HomePage homePage = new HomePage();
+        this.registerPage = homePage.navigateToRegisterPage();
+
+        this.registerPage.fillTheRegisterForm("", "", "", "", "", "",
+                "", "", "", "");
+        this.registerPage.registerAccount();
+
+        Assertions.assertTrue(this.registerPage.isCurrentPage());
+        Assertions.assertTrue(this.registerPage.isDisplayingErrorMessages());
     }
 }
