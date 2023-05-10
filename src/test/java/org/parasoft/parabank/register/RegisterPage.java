@@ -12,7 +12,8 @@ public class RegisterPage extends PageObject {
         super(browser);
     }
 
-    public void fillTheRegisterForm(String firstName, String lastName, String street, String city, String state, String zipCode, String phoneNumber, String ssn, String username, String password) {
+    public void fillTheRegisterForm(String firstName, String lastName, String street, String city, String state,
+                                    String zipCode, String phoneNumber, String ssn, String username, String password) {
         RegisterPage.username = username;
 
         this.browser.findElement(By.id("customer.firstName")).sendKeys(firstName);
@@ -33,11 +34,13 @@ public class RegisterPage extends PageObject {
     }
 
     public boolean isRegisteredTitleDisplayed() {
-        return this.browser.findElement(By.xpath("//h1[@class='title'][contains(.,'Welcome " + RegisterPage.username + "')]")).isDisplayed();
+        return this.browser.findElement(By.xpath("//h1[@class='title'][contains(.,'Welcome "
+                + RegisterPage.username + "')]")).isDisplayed();
     }
 
     public boolean isRegisteredMessageDisplayed() {
-        return this.browser.findElement(By.xpath("//p[contains(.,'Your account was created successfully. You are now logged in.')]")).isDisplayed();
+        return this.browser.findElement(By.xpath("//p[contains(.,'Your account was created" +
+                " successfully. You are now logged in.')]")).isDisplayed();
     }
 
     public boolean isLogOutButtonDisplayed() {
