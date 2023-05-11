@@ -1,8 +1,8 @@
 # parabank-web-selenium
 This project is a test automation of the [ParaBank](https://parabank.parasoft.com/parabank/index.htm), a demo site that simulates a realistic
-online banking website.
+online banking website, and it uses Selenium Webdriver and Java technologies.
 
-The web automated tests uses Selenium Webdriver and Java technologies.
+Important: the automation is not covering all the website functionalities.
 
 ## Prerequisites
 - JDK 11.8.18;
