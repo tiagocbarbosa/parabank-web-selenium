@@ -16,7 +16,7 @@ public class ContactTest {
 
     @Test
     public void shouldContactWithSuccess() {
-        HomePage homePage = new HomePage();
+        HomePage homePage = new HomePage(null);
         this.contactPage = homePage.navigateToContactPage();
 
         String name = "Fulano";

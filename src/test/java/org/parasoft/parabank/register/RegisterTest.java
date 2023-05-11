@@ -19,7 +19,7 @@ public class RegisterTest {
 
     @Test
     public void shouldRegisterAccountWithSuccess() {
-        HomePage homePage = new HomePage();
+        HomePage homePage = new HomePage(null);
         this.registerPage = homePage.navigateToRegisterPage();
 
         String firstName = "Fulano";
@@ -45,7 +45,7 @@ public class RegisterTest {
 
     @Test
     public void shouldDisplayErrors() {
-        HomePage homePage = new HomePage();
+        HomePage homePage = new HomePage(null);
         this.registerPage = homePage.navigateToRegisterPage();
 
         this.registerPage.fillTheRegisterForm("", "", "", "", "", "",
