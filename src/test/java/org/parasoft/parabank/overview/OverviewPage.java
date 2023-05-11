@@ -22,7 +22,8 @@ public class OverviewPage extends PageObject {
     }
 
     public boolean isFullNameDisplayed(String firstName, String lastName) {
-        return this.browser.findElement(By.xpath("//p[@class='smallText'][contains(.,'Welcome " + firstName + " " + lastName + "')]")).isDisplayed();
+        return this.browser.findElement(By.xpath("//p[@class='smallText'][contains(.,'Welcome "
+                + firstName + " " + lastName + "')]")).isDisplayed();
     }
 
     public boolean isBalanceDisplayed() {
