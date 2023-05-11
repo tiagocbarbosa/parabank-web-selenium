@@ -3,6 +3,7 @@ package org.parasoft.parabank.register;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.parasoft.parabank.PageObject;
+import org.parasoft.parabank.home.HomePage;
 
 public class RegisterPage extends PageObject {
 
@@ -63,5 +64,10 @@ public class RegisterPage extends PageObject {
 
     public boolean isCurrentPage() {
         return this.browser.getCurrentUrl().equals(URL_REGISTER);
+    }
+
+    public HomePage navigateToHomePage() {
+        this.browser.findElement(By.xpath("//a[contains(.,'Log Out')]")).click();
+        return new HomePage(this.browser);
     }
 }
