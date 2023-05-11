@@ -39,12 +39,12 @@ public class OverviewTest {
         registerPage.registerAccount();
 
         homePage = registerPage.navigateToHomePage();
-        homePage.fillLoginForm(username, password);
-        this.overviewPage = homePage.login();
+        homePage.fillLogInForm(username, password);
+        this.overviewPage = homePage.logIn();
 
         Assertions.assertTrue(this.overviewPage.isCurrentPage());
         Assertions.assertTrue(this.overviewPage.isFullNameDisplayed(firstName, lastName));
         // add assertion to verify the balance
-        Assertions.assertTrue(this.overviewPage.isLogOutDisplayed());
+        Assertions.assertTrue(this.overviewPage.isLogOutButtonDisplayed());
     }
 }

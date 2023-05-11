@@ -16,7 +16,7 @@ public class OverviewPage extends PageObject {
         return this.browser.getCurrentUrl().equals(URL_OVERVIEW);
     }
 
-    public boolean isLogOutDisplayed() {
+    public boolean isLogOutButtonDisplayed() {
         return this.browser.findElement(By.xpath("//a[contains(.,'Log Out')]")).isDisplayed();
     }
 

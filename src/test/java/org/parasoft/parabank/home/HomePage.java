@@ -26,12 +26,12 @@ public class HomePage extends PageObject {
         return new ContactPage(browser);
     }
 
-    public void fillLoginForm(String username, String password) {
+    public void fillLogInForm(String username, String password) {
         this.browser.findElement(By.xpath("//input[contains(@type,'text')]")).sendKeys(username);
         this.browser.findElement(By.xpath("//input[contains(@type,'password')]")).sendKeys(password);
     }
 
-    public OverviewPage login() {
+    public OverviewPage logIn() {
         this.browser.findElement(By.xpath("//input[contains(@type,'password')]")).submit();
         return new OverviewPage(this.browser);
     }
