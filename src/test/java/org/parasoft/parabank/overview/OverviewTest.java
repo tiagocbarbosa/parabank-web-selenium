@@ -44,7 +44,7 @@ public class OverviewTest {
 
         Assertions.assertTrue(this.overviewPage.isCurrentPage());
         Assertions.assertTrue(this.overviewPage.isFullNameDisplayed(firstName, lastName));
-        // add assertion to verify the balance
+        Assertions.assertTrue(this.overviewPage.isBalanceDisplayed());
         Assertions.assertTrue(this.overviewPage.isLogOutButtonDisplayed());
     }
 }
