@@ -8,7 +8,7 @@ Important: the automation is not covering all the website functionalities.
 - JDK 11.8.18;
 - Maven 3.8.1;
 - Selenium Webdriver 4.9.0;
-- ChromeDriver 113.0.5672.63;
+- ChromeDriver 114.0.5735.90;
 - JUnit 5.9.3.
 
 Note: the versions defined above can be equal or higher.
