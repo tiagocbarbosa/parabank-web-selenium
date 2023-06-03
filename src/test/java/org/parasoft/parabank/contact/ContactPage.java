@@ -7,6 +7,14 @@ import org.parasoft.parabank.PageObject;
 public class ContactPage extends PageObject {
 
     public static final String URL_CONTACT = "https://parabank.parasoft.com/parabank/contact.htm";
+
+    private final By nameInput = By.id("name");
+    private final By emailInput = By.id("email");
+    private final By phoneInput = By.id("phone");
+    private final By messageInput = By.id("message");
+    private final By sendButton = By.cssSelector("#contactForm input[type=\"submit\"]");
+    private final By feedbackMessage = By.cssSelector("#rightPanel > p:nth-child(2)");
+
     private static String name;
 
     public ContactPage(WebDriver browser) {
@@ -16,21 +24,21 @@ public class ContactPage extends PageObject {
     public void fillTheContactForm(String name, String email, String phone, String message) {
         ContactPage.name = name;
 
-        this.browser.findElement(By.id("name")).sendKeys(ContactPage.name);
-        this.browser.findElement(By.id("email")).sendKeys(email);
-        this.browser.findElement(By.id("phone")).sendKeys(phone);
-        this.browser.findElement(By.id("message")).sendKeys(message);
+        insertText(nameInput, ContactPage.name);
+        insertText(emailInput, email);
+        insertText(phoneInput, phone);
+        insertText(messageInput, message);
     }
 
     public void contact() {
-        this.browser.findElement(By.xpath("//input[contains(@value,'Send to Customer Care')]")).click();
+        clickOnButton(sendButton);
     }
 
     public boolean isMessageDisplayed() {
-        return this.browser.findElement(By.xpath("//p[contains(.,'Thank you " + ContactPage.name + "')]")).isDisplayed();
+        return isElementDisplayed(feedbackMessage);
     }
 
     public boolean isCurrentPage() {
-        return this.browser.getCurrentUrl().equals(URL_CONTACT);
+        return getUrl().equals(URL_CONTACT);
     }
 }
