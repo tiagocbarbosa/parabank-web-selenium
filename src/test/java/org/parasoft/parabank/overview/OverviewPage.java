@@ -30,6 +30,6 @@ public class OverviewPage extends PageObject {
         WebElement tableRow = this.browser.findElement(By.cssSelector("#accountTable tbody tr"));
         WebElement balanceColumn = tableRow.findElement(By.cssSelector("td:nth-child(2)"));
 
-        return balanceColumn.getText().equals("$10000.00");
+        return balanceColumn.getText().equals("$1000.00");
     }
 }

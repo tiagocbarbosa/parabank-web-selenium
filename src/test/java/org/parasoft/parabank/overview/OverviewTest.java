@@ -44,6 +44,8 @@ public class OverviewTest {
 
         Assertions.assertTrue(this.overviewPage.isCurrentPage());
         Assertions.assertTrue(this.overviewPage.isFullNameDisplayed(firstName, lastName));
+
+        // TODO: the test below is failing. Reason: it's taking some time to display the balance
         Assertions.assertTrue(this.overviewPage.isBalanceDisplayed());
         Assertions.assertTrue(this.overviewPage.isLogOutButtonDisplayed());
     }
